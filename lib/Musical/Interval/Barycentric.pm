@@ -16,7 +16,7 @@ use constant {
     SCALE => 12, # Scale notes
 };
 
-our $VERSION = '0.01';
+our $VERSION = '0.01_01';
 
 =head1 DESCRIPTION
 
