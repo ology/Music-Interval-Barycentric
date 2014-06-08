@@ -6,3 +6,5 @@ BEGIN {
 }
 
 # TODO!
+
+done_testing;
