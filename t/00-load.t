@@ -1,7 +1,7 @@
 #!perl
 use Test::More;
 
-use_ok 'Musical::Interval::Barycentric';
+use_ok 'Music::Interval::Barycentric';
 
 diag("Testing Music::Interval::Barycentric $Music::Interval::Barycentric::VERSION, Perl $], $^X");
 
