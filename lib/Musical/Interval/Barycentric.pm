@@ -38,7 +38,7 @@ Barycentric chord analysis
 
 Return array references for CSV chords.
 
-* This is a legacy method from fetching commandline argments.
+* This is a legacy method from fetching commandline arguments.
 
 =cut
 
