@@ -1,9 +1,7 @@
 #!perl
 use Test::More;
 
-BEGIN {
-    use_ok 'Musical::Interval::Barycentric';
-}
+use_ok 'Music::Interval::Barycentric';
 
 # TODO!
 
