@@ -66,7 +66,10 @@ sub distance {
 
 =head2 orbit_distance()
 
-TODO
+  $d = orbit_distance($chord1, $chord2);
+
+Return the distance from C<chord1> to the minimum of the cyclic permutations
+for C<chord2>.
 
 =cut
 
