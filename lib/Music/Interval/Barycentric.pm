@@ -1,4 +1,5 @@
 package Music::Interval::Barycentric;
+# ABSTRACT: Compute barycentric musical interval space
 
 use strict;
 use warnings;
