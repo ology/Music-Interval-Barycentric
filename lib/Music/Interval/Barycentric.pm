@@ -1,9 +1,3 @@
-=head1 NAME
-
-Music::Interval::Barycentric - Barycentric Musical Interval Space
-
-=cut
-
 package Music::Interval::Barycentric;
 
 use strict;
@@ -16,7 +10,7 @@ use constant {
     SCALE => 12, # Scale notes
 };
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 =head1 DESCRIPTION
 
