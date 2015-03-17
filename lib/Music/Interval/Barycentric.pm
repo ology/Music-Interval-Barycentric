@@ -86,7 +86,7 @@ sub orbit_distance {
   $d = forte_distance($chord1, $chord2);
 
 Return the distance from C<chord1> to the minimum of the cyclic permutations and
-revese cyclic permutations for C<chord2>.
+reverse cyclic permutations for C<chord2>.
 
 =cut
 
