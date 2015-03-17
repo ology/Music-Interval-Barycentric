@@ -11,7 +11,7 @@ use constant {
     SCALE => 12, # Scale notes
 };
 
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 
 =head1 DESCRIPTION
 
@@ -30,6 +30,8 @@ Barycentric chord analysis
 
 =head2 barycenter()
 
+ @barycenter = barycenter($n);
+
 Return the barycenter (the "central coordinate")  given an integer representing
 the number of notes in a chord.
 
@@ -43,9 +45,11 @@ sub barycenter {
 
 =head2 distance()
 
+ $d = distance($chord1, $chord2);
+
 Interval space distance metric between chords.
 
-* This is used by the orbit_distance() and evenness_index() functions.
+* This is used by the C<orbit_distance()> and C<evenness_index()> functions.
 
 =cut
 
@@ -79,7 +83,10 @@ sub orbit_distance {
 
 =head2 forte_distance()
 
-TODO
+  $d = forte_distance($chord1, $chord2);
+
+Return the distance from C<chord1> to the minimum of the cyclic permutations and
+revese cyclic permutations for C<chord2>.
 
 =cut
 
@@ -94,6 +101,8 @@ sub forte_distance {
 }
 
 =head2 cyclic_permutation()
+
+ @cycles = cyclic_permutation(@intervals);
 
 Return the list of cyclic permutations of the given intervals.
 
@@ -111,6 +120,8 @@ sub cyclic_permutation {
 }
 
 =head2 evenness_index()
+
+  $d = evenness_index($chord);
 
 Return a chord distance from the barycenter.
 
