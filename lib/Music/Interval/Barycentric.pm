@@ -20,7 +20,7 @@ Barycentric chord analysis
 
  use Music::Interval::Barycentric;
  print join(', ', Music::Interval::Barycentric::barycenter(3)), "\n";
- @chords = [qw(3 4 5), qw(0 4 7)];
+ my @chords = ([3, 4, 5], [0, 4, 7]);
  printf "D: %.3f\n", Music::Interval::Barycentric::distance($chords[0], $chords[1]);
  print Music::Interval::Barycentric::evenness_index($chords[0]);
  print Music::Interval::Barycentric::orbit_distance(@chords), "\n";
