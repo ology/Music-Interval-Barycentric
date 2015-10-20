@@ -5,13 +5,12 @@ use strict;
 use warnings;
 
 use List::Util qw( min );
+use Readonly;
 
-use constant {
-    SIZE  => 3,  # Triad chord
-    SCALE => 12, # Scale notes
-};
+Readonly my $SIZE  => 3;  # Triad chord
+Readonly my $SCALE => 12, # Scale notes
 
-our $VERSION = '0.0103';
+our $VERSION = '0.0104';
 
 =head1 DESCRIPTION
 
@@ -19,12 +18,13 @@ Barycentric chord analysis
 
 =head1 SYNOPSIS
 
- print join(', ', barycenter(3)), "\n";
+ use Music::Interval::Barycentric;
+ print join(', ', Music::Interval::Barycentric::barycenter(3)), "\n";
  @chords = [qw(3 4 5), qw(0 4 7)];
- printf "D: %.3f\n", distance($chords[0], $chords[1]);
- print evenness_index($chords[0]);
- print orbit_distance(@chords), "\n";
- print forte_distance(@chords), "\n";
+ printf "D: %.3f\n", Music::Interval::Barycentric::distance($chords[0], $chords[1]);
+ print Music::Interval::Barycentric::evenness_index($chords[0]);
+ print Music::Interval::Barycentric::orbit_distance(@chords), "\n";
+ print Music::Interval::Barycentric::forte_distance(@chords), "\n";
 
 =head1 FUNCTIONS
 
@@ -138,16 +138,7 @@ __END__
 
 =head1 SEE ALSO
 
-http://www.amazon.com/Geometry-Musical-Chords-Interval-Representation/dp/145022797X
-
-=head1 AUTHOR
-
-Gene Boggs E<lt>gene@cpan.orgE<gt>
-
-=head1 COPYRIGHT
-
-Copyright 2012, Gene Boggs
-
-This code is licensed under the same terms as Perl itself.
+L<http://www.amazon.com/Geometry-Musical-Chords-Interval-Representation/dp/145022797X>
+"A New Geometry of Musical Chords in Interval Representation: Dissonance, Enrichment, Degeneracy and Complementation"
 
 =cut
