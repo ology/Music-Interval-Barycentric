@@ -38,8 +38,8 @@ the number of notes in a chord.
 =cut
 
 sub barycenter {
-    my $size  = shift || SIZE;  # Default to a triad
-    my $scale = shift || SCALE; # Default to the common scale notes
+    my $size  = shift || $SIZE;  # Default to a triad
+    my $scale = shift || $SCALE; # Default to the common scale notes
     return ($scale / $size) x $size;
 }
 
