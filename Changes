@@ -2,6 +2,7 @@ Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
     - Improved documentation again!
+    - Use Readonly instead of constant.
 
 0.0103 2015-03-17
     - Improved documentation. 
