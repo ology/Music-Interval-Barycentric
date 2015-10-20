@@ -1,6 +1,10 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
+    - Fixed SYNOPSIS syntax.
+    - Added an eg/synopsis script.
+
+0.0104 2015-10-19
     - Improved documentation again!
     - Use Readonly instead of constant.
 
