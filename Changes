@@ -1,6 +1,10 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
+    - Improved documentation
+    - Added the missing 1; to the end of the module!
+
+0.0105 2015-10-19
     - Fixed SYNOPSIS syntax.
     - Added an eg/synopsis script.
 
