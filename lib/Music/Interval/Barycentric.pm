@@ -8,10 +8,9 @@ use warnings;
 our $VERSION = '0.02';
 
 use List::Util qw( min );
-use Readonly;
 
-Readonly my $SIZE  => 3;  # Triad chord
-Readonly my $SCALE => 12; # Scale notes
+my $SIZE  = 3;  # Triad chord
+my $SCALE = 12; # Scale notes
 
 =head1 DESCRIPTION
 
