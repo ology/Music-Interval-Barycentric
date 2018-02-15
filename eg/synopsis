@@ -1,0 +1,11 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+use Music::Interval::Barycentric;
+my @chords = ([3, 4, 5], [0, 4, 7]);
+print 'Barycenter: ', join(', ', Music::Interval::Barycentric::barycenter(3)), "\n";
+printf "Distance: %.3f\n", Music::Interval::Barycentric::distance($chords[0], $chords[1]);
+print 'Evenness index: ', Music::Interval::Barycentric::evenness_index($chords[0]), "\n";
+print 'Orbit distance: ', Music::Interval::Barycentric::orbit_distance(@chords), "\n";
+print 'Forte distance: ', Music::Interval::Barycentric::forte_distance(@chords), "\n";
