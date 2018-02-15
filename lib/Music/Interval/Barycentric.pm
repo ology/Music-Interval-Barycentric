@@ -1,16 +1,17 @@
 package Music::Interval::Barycentric;
+
 # ABSTRACT: Compute barycentric musical interval space
 
 use strict;
 use warnings;
+
+our $VERSION = '0.0105';
 
 use List::Util qw( min );
 use Readonly;
 
 Readonly my $SIZE  => 3;  # Triad chord
 Readonly my $SCALE => 12; # Scale notes
-
-our $VERSION = '0.0104';
 
 =head1 DESCRIPTION
 
@@ -19,12 +20,12 @@ Barycentric chord analysis
 =head1 SYNOPSIS
 
  use Music::Interval::Barycentric;
- print join(', ', Music::Interval::Barycentric::barycenter(3)), "\n";
  my @chords = ([3, 4, 5], [0, 4, 7]);
- printf "D: %.3f\n", Music::Interval::Barycentric::distance($chords[0], $chords[1]);
- print Music::Interval::Barycentric::evenness_index($chords[0]);
- print Music::Interval::Barycentric::orbit_distance(@chords), "\n";
- print Music::Interval::Barycentric::forte_distance(@chords), "\n";
+ print 'Barycenter: ', join(', ', Music::Interval::Barycentric::barycenter(3)), "\n";
+ printf "Distance: %.3f\n", Music::Interval::Barycentric::distance($chords[0], $chords[1]);
+ print 'Evenness index: ', Music::Interval::Barycentric::evenness_index($chords[0]), "\n";
+ print 'Orbit distance: ', Music::Interval::Barycentric::orbit_distance(@chords), "\n";
+ print 'Forte distance: ', Music::Interval::Barycentric::forte_distance(@chords), "\n";
 
 =head1 FUNCTIONS
 
@@ -134,6 +135,7 @@ sub evenness_index {
     return $i;
 }
 
+1;
 __END__
 
 =head1 SEE ALSO
