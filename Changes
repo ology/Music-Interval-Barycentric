@@ -1,6 +1,7 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
+    - Export all functions.
 
 0.02 2018-02-14 20:36:27
     - Improved documentation.

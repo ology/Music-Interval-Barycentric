@@ -5,9 +5,21 @@ package Music::Interval::Barycentric;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.0300';
 
 use List::Util qw( min );
+
+require Exporter;
+use vars qw(@ISA @EXPORT);
+@ISA    = qw(Exporter);
+@EXPORT = qw(
+    barycenter
+    distance
+    evenness_index
+    orbit_distance
+    forte_distance
+    cyclic_permutation
+);
 
 my $SIZE  = 3;  # Triad chord
 my $SCALE = 12; # Scale notes
@@ -20,11 +32,11 @@ Barycentric chord analysis
 
  use Music::Interval::Barycentric;
  my @chords = ([3, 4, 5], [0, 4, 7]);
- print 'Barycenter: ', join(', ', Music::Interval::Barycentric::barycenter(3)), "\n";
- printf "Distance: %.3f\n", Music::Interval::Barycentric::distance($chords[0], $chords[1]);
- print 'Evenness index: ', Music::Interval::Barycentric::evenness_index($chords[0]), "\n";
- print 'Orbit distance: ', Music::Interval::Barycentric::orbit_distance(@chords), "\n";
- print 'Forte distance: ', Music::Interval::Barycentric::forte_distance(@chords), "\n";
+ print 'Barycenter: ', join(', ', barycenter(3)), "\n";
+ printf "Distance: %.3f\n", distance($chords[0], $chords[1]);
+ print 'Evenness index: ', evenness_index($chords[0]), "\n";
+ print 'Orbit distance: ', orbit_distance(@chords), "\n";
+ print 'Forte distance: ', forte_distance(@chords), "\n";
 
 =head1 FUNCTIONS
 
