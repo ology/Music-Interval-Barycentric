@@ -5,7 +5,7 @@ package Music::Interval::Barycentric;
 use strict;
 use warnings;
 
-our $VERSION = '0.0300';
+our $VERSION = '0.0301';
 
 use List::Util qw( min );
 
@@ -27,6 +27,17 @@ my $SCALE = 12; # Scale notes
 =head1 DESCRIPTION
 
 Barycentric chord analysis
+
+From the Amazon link below:
+
+"An intervallic representation of the chord leads naturally to a discrete
+barycentric condition. This condition itself leads to a convenient geometric
+representation of the chordal space as a simplicial grid.
+
+Chords appear as points in this grid and musical inversions of the chord would
+generate beautiful polyhedra inscribed in concentric spheres centered at the
+barycenter. The radii of these spheres would effectively quantify the evenness
+and thus the consonance of the chord."
 
 =head1 SYNOPSIS
 
