@@ -1,6 +1,8 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
+
+0.0301 2018-12-30 20:48:58
     - Fix the eg/synopsis code.
     - Enhance the description documentation.
 
