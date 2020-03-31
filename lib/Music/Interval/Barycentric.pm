@@ -9,10 +9,9 @@ our $VERSION = '0.0301';
 
 use List::Util qw( min );
 
-require Exporter;
-use vars qw(@ISA @EXPORT);
-@ISA    = qw(Exporter);
-@EXPORT = qw(
+use Exporter 'import';
+
+our @EXPORT = qw(
     barycenter
     distance
     evenness_index
@@ -42,8 +41,10 @@ and thus the consonance of the chord."
 =head1 SYNOPSIS
 
  use Music::Interval::Barycentric;
+
  my @chords = ([3, 4, 5], [0, 4, 7]);
- print 'Barycenter: ', join(', ', barycenter(3)), "\n";
+
+ print 'Barycenter: [', join(',', barycenter(scalar @chords)), "]\n";
  printf "Distance: %.3f\n", distance($chords[0], $chords[1]);
  print 'Evenness index: ', evenness_index($chords[0]), "\n";
  print 'Orbit distance: ', orbit_distance(@chords), "\n";
@@ -51,7 +52,7 @@ and thus the consonance of the chord."
 
 =head1 FUNCTIONS
 
-=head2 barycenter()
+=head2 barycenter
 
  @barycenter = barycenter($n);
 
@@ -66,13 +67,13 @@ sub barycenter {
     return ($scale / $size) x $size;
 }
 
-=head2 distance()
+=head2 distance
 
  $d = distance($chord1, $chord2);
 
 Interval space distance metric between chords.
 
-* This is used by the C<orbit_distance()> and C<evenness_index()> functions.
+* This is used by the C<orbit_distance> and C<evenness_index> functions.
 
 =cut
 
@@ -86,7 +87,7 @@ sub distance {
     return sqrt $distance;
 }
 
-=head2 orbit_distance()
+=head2 orbit_distance
 
   $d = orbit_distance($chord1, $chord2);
 
@@ -104,7 +105,7 @@ sub orbit_distance {
     return min(@distance);
 }
 
-=head2 forte_distance()
+=head2 forte_distance
 
   $d = forte_distance($chord1, $chord2);
 
@@ -123,7 +124,7 @@ sub forte_distance {
     return min(@distance);
 }
 
-=head2 cyclic_permutation()
+=head2 cyclic_permutation
 
  @cycles = cyclic_permutation(@intervals);
 
@@ -142,7 +143,7 @@ sub cyclic_permutation {
     return @cycles;
 }
 
-=head2 evenness_index()
+=head2 evenness_index
 
   $d = evenness_index($chord);
 
