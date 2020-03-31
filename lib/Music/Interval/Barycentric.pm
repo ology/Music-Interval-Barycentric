@@ -46,9 +46,9 @@ and thus the consonance of the chord."
 
  print 'Barycenter: [', join(',', barycenter(scalar @chords)), "]\n";
  printf "Distance: %.3f\n", distance($chords[0], $chords[1]);
- print 'Evenness index: ', evenness_index($chords[0]), "\n";
  print 'Orbit distance: ', orbit_distance(@chords), "\n";
  print 'Forte distance: ', forte_distance(@chords), "\n";
+ print 'Evenness index: ', evenness_index($chords[0]), "\n";
 
 =head1 FUNCTIONS
 
