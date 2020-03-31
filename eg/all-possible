@@ -8,7 +8,7 @@ use Music::Interval::Barycentric;
 # Pitch class triads
 my $i_iter = combinations([0 .. 11], 3);
 
-# Collect all metrics
+# Collect metrics
 my %data;
 while (my $i = $i_iter->next) {
     $data{"@$i"} = evenness_index($i);
