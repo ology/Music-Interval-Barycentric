@@ -7,6 +7,7 @@ use Music::Interval::Barycentric;
 
 # Pitch class triads
 my $i_iter = combinations([0 .. 11], 3);
+#my $i_iter = combinations([qw/ 0 2 4 5 7 9 11 /], 3);
 
 # Collect metrics
 my %data;
