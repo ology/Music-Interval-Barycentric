@@ -73,7 +73,7 @@ sub barycenter {
 
 Interval space distance metric between chords.
 
-* This is used by the C<orbit_distance> and C<evenness_index> functions.
+This function is used by the C<orbit_distance> and C<evenness_index> functions.
 
 =cut
 
