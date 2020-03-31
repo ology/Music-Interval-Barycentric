@@ -15,6 +15,10 @@ is distance([4,3,5], [1,3,8]), 3, 'distance';
 is sprintf('%.3f', distance([2,3,1,6], [2,1,3,7])), 2.121, 'distance';
 
 is orbit_distance([4,3,5], [3,4,5]), 1, 'orbit_distance';
+is orbit_distance([4,3,5], [4,4,4]), 1, 'orbit_distance';
+is sprintf('%.3f', orbit_distance([1,1,10], [4,4,4])), 5.196, 'orbit_distance';
+is orbit_distance([4,3,5], [1,3,8]), 3, 'orbit_distance';
+is sprintf('%.3f', orbit_distance([2,3,1,6], [2,1,3,7])), 2.121, 'orbit_distance';
 
 is forte_distance([4,3,5], [4,3,5]), 0, 'forte_distance';
 is forte_distance([4,3,5], [4,4,4]), 1, 'forte_distance';
