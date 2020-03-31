@@ -56,7 +56,7 @@ and thus the consonance of the chord."
 
  @barycenter = barycenter($n);
 
-Return the barycenter (the "central coordinate")  given an integer representing
+Return the barycenter (the "central coordinate") given an integer representing
 the number of notes in a chord.
 
 =cut
