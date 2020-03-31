@@ -5,6 +5,8 @@ use List::MoreUtils qw(uniq);
 use MIDI::Simple;
 use Music::Interval::Barycentric;
 
+my $max = shift || 16;
+
 my $notes = [
     [ 0 .. 11 ], # chromatic
     [ 0 .. 11 ], # chromatic
@@ -31,10 +33,12 @@ my $ga = AI::Genetic::Pro->new(
 );
 
 $ga->init($notes);
-$ga->evolve(100);
 
-use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper$ga->getFittest);
-warn(__PACKAGE__,' ',__LINE__," Value: ",$top - $ga->as_value($ga->getFittest),"\n");
+for my $i (1 .. $max) {
+    $ga->evolve(100);
+    use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper$ga->getFittest);
+    warn(__PACKAGE__,' ',__LINE__," Value: ",$top - $ga->as_value($ga->getFittest),"\n");
+}
 
 sub fitness {
     my ($ga, $chromosome) = @_;
