@@ -29,4 +29,4 @@ is_deeply [cyclic_permutation(2,4,6)],
 is evenness_index([4,3,5]), 1, 'evenness_index';
 is evenness_index([2,4,6]), 2, 'evenness_index';
 
-done_testing;
+done_testing();
