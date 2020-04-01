@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# Evolve consonant chords
+# Evolve barycentic chords
 
 use AI::Genetic::Pro;
 use List::MoreUtils qw(uniq);
@@ -11,7 +11,7 @@ use Music::Interval::Barycentric;
 
 my $max   = shift || 8;
 my $bpm   = shift || 100;
-my $patch = shift || 4;
+my $patch = shift || 0;
 
 my $top = 8; # Number above the highest evenness_index
 my $threshold = 4; # Allowed top - evenness_index
