@@ -163,6 +163,8 @@ __END__
 
 =head1 SEE ALSO
 
+The F<eg/*> programs in this distribution.
+
 L<http://www.amazon.com/Geometry-Musical-Chords-Interval-Representation/dp/145022797X>
 "A New Geometry of Musical Chords in Interval Representation: Dissonance, Enrichment, Degeneracy and Complementation"
 
