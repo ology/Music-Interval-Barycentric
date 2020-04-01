@@ -1,6 +1,9 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
+    - Correct eg/evolve.
+
+0.0303 2020-04-01 12:36:13
     - Added the eg/all-possible program for reference purposes.
     - Added the possibly insteresting eg/evolve program.
 
