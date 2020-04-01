@@ -13,7 +13,7 @@ my $max   = shift || 8;
 my $bpm   = shift || 100;
 my $patch = shift || 0;
 
-my $top = 8; # Number above the highest evenness_index
+my $top = 8; # Integer above the highest evenness_index
 my $threshold = 5; # Allowed top - evenness_index
 my $base = 59; # Base of middle C MIDI values
 
