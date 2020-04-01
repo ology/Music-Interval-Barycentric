@@ -50,7 +50,7 @@ $score->write_score("$0.mid");
 sub fitness {
     my ($ga, $chromosome) = @_;
     return 0 if @$chromosome > scalar uniq(@$chromosome); # Duplicates not allowed
-    return $top - evenness_index($chromosome);
+    return $top - evenness_index($chromosome); # More consonant chords are deemed fittest
 }
 
 sub terminate {
