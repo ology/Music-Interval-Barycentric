@@ -1,0 +1,59 @@
+#!/usr/bin/env perl
+
+# Evolve consonant chords
+
+use AI::Genetic::Pro;
+use List::MoreUtils qw(uniq);
+use lib $ENV{HOME} . '/sandbox/MIDI-Util/lib';
+use MIDI::Util;
+use lib $ENV{HOME} . '/sandbox/Music-Interval-Barycentric/lib';
+use Music::Interval::Barycentric;
+
+my $max   = shift || 8;
+my $bpm   = shift || 100;
+my $patch = shift || 4;
+
+my $top = 8; # Number above the highest evenness_index
+my $threshold = 4; # Allowed top - evenness_index
+
+my $notes = [ ([0, 11]) x 3 ]; # rangevector
+
+my $score = MIDI::Util::setup_score(bpm => $bpm, patch => $patch);
+
+my $ga = AI::Genetic::Pro->new(        
+    -fitness         => \&fitness,     # fitness function
+    -terminate       => \&terminate,   # terminate function
+    -type            => 'rangevector',  # type of chromosome
+    -population      => 100,           # population
+    -crossover       => 0.9,           # probab. of crossover
+    -mutation        => 0.5,          # probab. of mutation
+    -parents         => 2,             # number  of parents
+    -selection       => ['Roulette'],  # selection strategy
+    -strategy        => ['PMX'],       # crossover strategy
+    -cache           => 1,             # cache results
+    -history         => 1,             # remember best results
+    -preserve        => 1,             # remember the bests
+    -variable_length => 0,             # turn variable length OFF
+);
+
+$ga->init($notes);
+$ga->evolve(100);
+
+#use Data::Dumper;warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper$ga->getFittest(8));
+for my $chromosome ($ga->getFittest($max)) {
+    $score->n('qn', map { 59 + $_ } @$chromosome);
+    $score->r('qn');
+}
+$score->write_score("$0.mid");
+
+sub fitness {
+    my ($ga, $chromosome) = @_;
+    return 0 if @$chromosome > scalar uniq(@$chromosome); # Duplicates not allowed
+    return $top - evenness_index($chromosome);
+}
+
+sub terminate {
+    my ($ga) = @_;
+    return 1 if $ga->as_value($ga->getFittest) > $threshold;
+    return;
+}
