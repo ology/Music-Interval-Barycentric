@@ -49,9 +49,21 @@ $score->write_score("$0.mid");
 # "The higher the value, the [greater] the chance of an individual passing its genes on in future generations through mating (crossover)."
 sub fitness {
     my ($ga, $chromosome) = @_;
+
     $chromosome = get_chromosome($ga, $chromosome);
-    return 0 if @$chromosome > scalar uniq(@$chromosome); # Duplicates not allowed
-    return $top - evenness_index($chromosome); # More "even" chords are deemed fittest
+
+    return 0
+        if @$chromosome > scalar uniq(@$chromosome); # Duplicates not allowed
+
+    for my $i (@$chromosome) {
+        for my $j (@$chromosome) {
+            next if $i == $j;
+            return 0
+                if ($j == $i + 1) || ($j == $i - 1);
+        }
+    }
+
+    return $top - evenness_index($chromosome); # "Even" chords are deemed fittest
 }
 
 sub terminate {
