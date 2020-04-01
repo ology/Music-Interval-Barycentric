@@ -56,7 +56,6 @@ sub fitness {
 
 sub terminate {
     my ($ga) = @_;
-    my $chromosome = get_chromosome($ga);
     return $ga->as_value($ga->getFittest) > $threshold ? 1 : 0;
 }
 
