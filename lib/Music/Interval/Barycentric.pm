@@ -5,7 +5,7 @@ package Music::Interval::Barycentric;
 use strict;
 use warnings;
 
-our $VERSION = '0.0304';
+our $VERSION = '0.0305';
 
 use List::Util qw( min );
 
@@ -27,7 +27,7 @@ my $SCALE = 12; # Scale notes
 
 Barycentric chord analysis
 
-From the Amazon link below:
+From the book (in the Amazon link below):
 
 "An intervallic representation of the chord leads naturally to a discrete
 barycentric condition. This condition itself leads to a convenient geometric
