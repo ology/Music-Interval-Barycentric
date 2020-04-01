@@ -45,7 +45,7 @@ and thus the consonance of the chord."
  my @chords = ([3, 4, 5], [0, 4, 7]);
 
  print 'Barycenter: [', join(',', barycenter(scalar @chords)), "]\n";
- printf "Distance: %.3f\n", distance($chords[0], $chords[1]);
+ printf "Distance: %.3f\n", distance(@chords);
  print 'Orbit distance: ', orbit_distance(@chords), "\n";
  print 'Forte distance: ', forte_distance(@chords), "\n";
  print 'Evenness index: ', evenness_index($chords[0]), "\n";
@@ -54,7 +54,7 @@ and thus the consonance of the chord."
 
 =head2 barycenter
 
- @barycenter = barycenter($n);
+ @point = barycenter($n);
 
 Return the barycenter (the "central coordinate") given an integer representing
 the number of notes in a chord.
