@@ -15,6 +15,7 @@ my $patch = shift || 0;
 
 my $top = 8; # Number above the highest evenness_index
 my $threshold = 4; # Allowed top - evenness_index
+my $base = 59; # Base of middle C MIDI values
 
 my $notes = [ ([0 .. 11]) x 3 ]; # vectors of chromatc scales
 
@@ -40,7 +41,7 @@ $ga->init($notes);
 $ga->evolve(100);
 
 for my $fit ($ga->getFittest($max)) {
-    $score->n('qn', map { 59 + $_ } @{ get_chromosome($ga, $fit) });
+    $score->n('qn', map { $base + $_ } @{ get_chromosome($ga, $fit) });
     $score->r('qn');
 }
 $score->write_score("$0.mid");
