@@ -16,7 +16,7 @@ my $patch = shift || 0;
 my $top = 8; # Number above the highest evenness_index
 my $threshold = 4; # Allowed top - evenness_index
 
-my $notes = [ ([0, 11]) x 3 ]; # rangevector
+my $notes = [ ([0, 11]) x 3 ]; # rangevector of 3 chromatc scales
 
 my $score = MIDI::Util::setup_score(bpm => $bpm, patch => $patch);
 
