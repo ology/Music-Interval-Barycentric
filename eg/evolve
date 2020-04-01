@@ -46,6 +46,7 @@ for my $chromosome ($ga->getFittest($max)) {
 }
 $score->write_score("$0.mid");
 
+# "The higher the value, the bigger the chance of an individual passing its genes on in future generations through mating (crossover)."
 sub fitness {
     my ($ga, $chromosome) = @_;
     return 0 if @$chromosome > scalar uniq(@$chromosome); # Duplicates not allowed
