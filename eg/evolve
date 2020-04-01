@@ -23,10 +23,10 @@ my $score = MIDI::Util::setup_score(bpm => $bpm, patch => $patch);
 my $ga = AI::Genetic::Pro->new(        
     -fitness         => \&fitness,     # fitness function
     -terminate       => \&terminate,   # terminate function
-    -type            => 'rangevector',  # type of chromosome
+    -type            => 'rangevector', # type of chromosome
     -population      => 100,           # population
     -crossover       => 0.9,           # probab. of crossover
-    -mutation        => 0.5,          # probab. of mutation
+    -mutation        => 0.5,           # probab. of mutation
     -parents         => 2,             # number  of parents
     -selection       => ['Roulette'],  # selection strategy
     -strategy        => ['PMX'],       # crossover strategy
