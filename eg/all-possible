@@ -1,4 +1,6 @@
 #!/usr/bin/env perl
+
+# Show all possible chords sorted by their evenness
 use strict;
 use warnings;
 
