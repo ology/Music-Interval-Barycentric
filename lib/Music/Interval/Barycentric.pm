@@ -31,9 +31,9 @@ my $SCALE = 12; # Default number of scale notes
 
  my @bary = barycenter(scalar @chords));
  my $d = distance(@chords);
- $d = orbit_distance(@chords), "\n";
- $d = forte_distance(@chords), "\n";
- my $e = evenness_index($chords[0]), "\n";
+ $d = orbit_distance(@chords);
+ $d = forte_distance(@chords);
+ my $e = evenness_index($chords[0]);
 
  my $cycles = cyclic_permutation(2,4,6); # [[2,4,6], [6,2,4], [4,6,2]]
 
