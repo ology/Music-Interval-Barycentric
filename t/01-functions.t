@@ -16,6 +16,7 @@ my @chords = (
     [[1,1,10], [4,4,4]],
     [[4,3,5], [1,3,8]],
     [[2,3,1,6], [2,1,3,7]], # 6
+    [[2,4,6], [6,2,4], [4,6,2]],
 );
 
 is distance(@{ $chords[0] }), 0, 'distance';
@@ -43,7 +44,7 @@ is sprintf('%.3f', forte_distance(@{ $chords[5] })), 2.646, 'forte_distance';
 is sprintf('%.3f', forte_distance(@{ $chords[6] })), 1.871, 'forte_distance';
 
 is_deeply [cyclic_permutation(2,4,6)],
-    [ [2,4,6], [6,2,4], [4,6,2] ],
+    $chords[7],
     'cyclic_permutation';
 
 is evenness_index([4,3,5]), 1, 'evenness_index';
