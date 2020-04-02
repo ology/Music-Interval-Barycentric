@@ -23,6 +23,18 @@ our @EXPORT = qw(
 my $SIZE  = 3;  # Triad chord
 my $SCALE = 12; # Scale notes
 
+=head1 SYNOPSIS
+
+ use Music::Interval::Barycentric;
+
+ my @chords = ([3, 4, 5], [0, 4, 7]);
+
+ print 'Barycenter: [', join(',', barycenter(scalar @chords)), "]\n";
+ printf "Distance: %.3f\n", distance(@chords);
+ print 'Orbit distance: ', orbit_distance(@chords), "\n";
+ print 'Forte distance: ', forte_distance(@chords), "\n";
+ print 'Evenness index: ', evenness_index($chords[0]), "\n";
+
 =head1 DESCRIPTION
 
 Barycentric chord analysis
@@ -37,18 +49,6 @@ Chords appear as points in this grid and musical inversions of the chord would
 generate beautiful polyhedra inscribed in concentric spheres centered at the
 barycenter. The radii of these spheres would effectively quantify the evenness
 and thus the consonance of the chord."
-
-=head1 SYNOPSIS
-
- use Music::Interval::Barycentric;
-
- my @chords = ([3, 4, 5], [0, 4, 7]);
-
- print 'Barycenter: [', join(',', barycenter(scalar @chords)), "]\n";
- printf "Distance: %.3f\n", distance(@chords);
- print 'Orbit distance: ', orbit_distance(@chords), "\n";
- print 'Forte distance: ', forte_distance(@chords), "\n";
- print 'Evenness index: ', evenness_index($chords[0]), "\n";
 
 =head1 FUNCTIONS
 
