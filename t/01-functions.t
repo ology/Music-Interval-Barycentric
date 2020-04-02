@@ -43,7 +43,7 @@ is sprintf('%.3f', forte_distance(@{ $chords[4] })), 5.196, 'forte_distance';
 is sprintf('%.3f', forte_distance(@{ $chords[5] })), 2.646, 'forte_distance';
 is sprintf('%.3f', forte_distance(@{ $chords[6] })), 1.871, 'forte_distance';
 
-is_deeply [cyclic_permutation(2,4,6)],
+is_deeply [cyclic_permutation(@{ $chords[3][0] })],
     $chords[7],
     'cyclic_permutation';
 
