@@ -35,7 +35,8 @@ my $SCALE = 12; # Default number of scale notes
  $dist = forte_distance(@chords);
  my $even = evenness_index($chords[0]);
 
- my $cycles = cyclic_permutation(2,4,6); # [[2,4,6], [6,2,4], [4,6,2]]
+ my $cycles = cyclic_permutation(2,4,6);
+ # [[2,4,6], [6,2,4], [4,6,2]]
 
 =head1 DESCRIPTION
 
