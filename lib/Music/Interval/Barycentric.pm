@@ -29,11 +29,11 @@ my $SCALE = 12; # Default number of scale notes
 
  my @chords = ([3, 4, 5], [0, 4, 7]);
 
- print 'Barycenter: [', join(',', barycenter(scalar @chords)), "]\n";
- printf "Distance: %.3f\n", distance(@chords);
- print 'Orbit distance: ', orbit_distance(@chords), "\n";
- print 'Forte distance: ', forte_distance(@chords), "\n";
- print 'Evenness index: ', evenness_index($chords[0]), "\n";
+ my @bary = barycenter(scalar @chords));
+ my $d = distance(@chords);
+ $d = orbit_distance(@chords), "\n";
+ $d = forte_distance(@chords), "\n";
+ my $i = evenness_index($chords[0]), "\n";
 
  my $cycles = cyclic_permutation(2,4,6); # [[2,4,6], [6,2,4], [4,6,2]]
 
