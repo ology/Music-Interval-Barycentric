@@ -63,8 +63,9 @@ and thus the consonance of the chord."
  @point = barycenter($chord_size);
  @point = barycenter($chord_size, $scale_notes);
 
-Return the barycenter (the "central coordinate") given an integer representing
-the number of notes in a chord, and an optional number of notes in the scale.
+Return the barycenter (the "central coordinate") given an optional integer
+representing the number of notes in a chord, and an optional number of notes in
+the scale.
 
 Defaults:
 
