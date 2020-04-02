@@ -34,8 +34,8 @@ use constant SCALE => 12; # Default number of scale notes
  $dist = forte_distance(@chords);
  my $even = evenness_index($chords[0]);
 
- my $cycles = cyclic_permutation($chords[0]);
- # [[3,4,5], [5,3,4], [4,5,3]]
+ my @cycles = cyclic_permutation($chords[0]);
+ # [3,4,5], [5,3,4], [4,5,3]
 
  my @center = barycenter(scalar @{ $chords[0] });
  # [4,4,4]
