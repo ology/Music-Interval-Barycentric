@@ -20,8 +20,8 @@ our @EXPORT = qw(
     cyclic_permutation
 );
 
-my $SIZE  = 3;  # Triad chord
-my $SCALE = 12; # Scale notes
+my $SIZE  = 3;  # Default triad size
+my $SCALE = 12; # Default number of scale notes
 
 =head1 SYNOPSIS
 
@@ -34,6 +34,8 @@ my $SCALE = 12; # Scale notes
  print 'Orbit distance: ', orbit_distance(@chords), "\n";
  print 'Forte distance: ', forte_distance(@chords), "\n";
  print 'Evenness index: ', evenness_index($chords[0]), "\n";
+
+ my $cycles = cyclic_permutation(2,4,6); # [[2,4,6], [6,2,4], [4,6,2]]
 
 =head1 DESCRIPTION
 
@@ -54,10 +56,16 @@ and thus the consonance of the chord."
 
 =head2 barycenter
 
- @point = barycenter($n);
+ @point = barycenter($chord_size);
+ @point = barycenter($chord_size, $scale_notes);
 
 Return the barycenter (the "central coordinate") given an integer representing
-the number of notes in a chord.
+the number of notes in a chord, and an optional number of notes in the scale.
+
+Defaults:
+
+  chord_size: 3
+  scale_notes: 12
 
 =cut
 
@@ -71,7 +79,7 @@ sub barycenter {
 
  $d = distance($chord1, $chord2);
 
-Interval space distance metric between chords.
+Common Euclidean space distance metric between chords (vectors).
 
 This function is used by the C<orbit_distance> and C<evenness_index> functions.
 
