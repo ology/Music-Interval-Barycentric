@@ -37,8 +37,8 @@ my $SCALE = 12; # Default number of scale notes
  $dist = forte_distance(@chords);
  my $even = evenness_index($chords[0]);
 
- my $cycles = cyclic_permutation(2,4,6);
- # [[2,4,6], [6,2,4], [4,6,2]]
+ my $cycles = cyclic_permutation($chords[0]);
+ # [[3,4,5], [5,3,4], [4,5,3]]
 
 =head1 DESCRIPTION
 
@@ -175,7 +175,7 @@ __END__
 
 =head1 SEE ALSO
 
-The F<eg/*> programs in this distribution.
+The F<t/01-functions.t> and F<eg/*> programs in this distribution.
 
 L<http://www.amazon.com/Geometry-Musical-Chords-Interval-Representation/dp/145022797X>
 "A New Geometry of Musical Chords in Interval Representation: Dissonance, Enrichment, Degeneracy and Complementation"
