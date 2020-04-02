@@ -56,6 +56,7 @@ and thus the consonance of the chord."
 
 =head2 barycenter
 
+ @point = barycenter;
  @point = barycenter($chord_size);
  @point = barycenter($chord_size, $scale_notes);
 
