@@ -86,8 +86,6 @@ sub barycenter {
 
 Common Euclidean space distance metric between chords (vectors).
 
-This function is used by the C<orbit_distance> and C<evenness_index> functions.
-
 =cut
 
 sub distance {
