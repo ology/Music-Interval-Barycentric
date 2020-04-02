@@ -27,9 +27,10 @@ my $SCALE = 12; # Default number of scale notes
 
  use Music::Interval::Barycentric;
 
- my @chords = ([3, 4, 5], [0, 4, 7]);
+ my @chords = ([3,4,5], [0,4,7]); # Given in "pitch-class notation"
 
  my @center = barycenter(scalar @{ $chords[0] });
+ # [4,4,4]
 
  my $dist = distance(@chords);
  $dist = orbit_distance(@chords);
