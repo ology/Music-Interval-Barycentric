@@ -9,15 +9,16 @@ use_ok 'Music::Interval::Barycentric';
 is_deeply [barycenter(3)], [4,4,4], 'barycenter';
 
 my @chords = (
-    [[4,3,5], [4,3,5]],     # 0
+    [[4,3,5], [4,3,5]],          # 0
     [[4,3,5], [3,4,5]],
     [[4,3,5], [4,4,4]],
-    [[2,4,6], [4,4,4]],     # 3
+    [[2,4,6], [4,4,4]],          # 3
     [[1,1,10], [4,4,4]],
     [[4,3,5], [1,3,8]],
-    [[2,3,1,6], [2,1,3,7]], # 6
+    [[2,3,1,6], [2,1,3,7]],      # 6
     [[2,4,6], [6,2,4], [4,6,2]],
     [[3,4,5], [0,4,7]],
+    [[3,4,5], [5,3,4], [4,5,3]], # 9
 );
 
 is distance(@{ $chords[0] }), 0, 'distance';
@@ -49,6 +50,9 @@ is forte_distance(@{ $chords[7] }), 0, 'forte_distance';
 
 is_deeply [cyclic_permutation(@{ $chords[3][0] })],
     $chords[7],
+    'cyclic_permutation';
+is_deeply [cyclic_permutation(@{ $chords[8][0] })],
+    $chords[9],
     'cyclic_permutation';
 
 is evenness_index($chords[0][0]), 1, 'evenness_index';
