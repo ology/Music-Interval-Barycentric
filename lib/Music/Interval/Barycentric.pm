@@ -29,7 +29,8 @@ my $SCALE = 12; # Default number of scale notes
 
  my @chords = ([3, 4, 5], [0, 4, 7]);
 
- my @center = barycenter(scalar @chords);
+ my @center = barycenter(scalar @{ $chords[0] });
+
  my $dist = distance(@chords);
  $dist = orbit_distance(@chords);
  $dist = forte_distance(@chords);
