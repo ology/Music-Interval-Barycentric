@@ -42,7 +42,7 @@ my $SCALE = 12; # Default number of scale notes
 
 Barycentric chord analysis
 
-From the book (in the Amazon link below):
+From the book (linked below):
 
 "An intervallic representation of the chord leads naturally to a discrete
 barycentric condition. This condition itself leads to a convenient geometric
