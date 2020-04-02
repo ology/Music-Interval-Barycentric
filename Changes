@@ -2,7 +2,7 @@ Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
     - Improve documentation.
-    - Add test cases.
+    - Add and improve test cases.
 
 0.0305 2020-04-01 16:24:58
     - Fix eg/evolve to generate friendlier chords.
