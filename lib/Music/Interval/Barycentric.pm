@@ -154,7 +154,7 @@ sub cyclic_permutation {
 
 =head2 evenness_index
 
-  $d = evenness_index($chord);
+  $e = evenness_index($chord);
 
 Return a chord distance from the barycenter.
 
