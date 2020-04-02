@@ -55,6 +55,7 @@ sub fitness {
     return 0
         if @$chromosome > scalar uniq(@$chromosome); # Duplicates not allowed
 
+    # Chords with adjacent half-steps are not allowed
     for my $i (@$chromosome) {
         for my $j (@$chromosome) {
             next if $i == $j;
