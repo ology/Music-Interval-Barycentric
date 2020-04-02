@@ -20,8 +20,8 @@ our @EXPORT = qw(
     cyclic_permutation
 );
 
-my $SIZE  = 3;  # Default chord size
-my $SCALE = 12; # Default number of scale notes
+use constant SIZE  => 3;  # Default chord size
+use constant SCALE => 12; # Default number of scale notes
 
 =head1 SYNOPSIS
 
@@ -74,8 +74,8 @@ Defaults:
 =cut
 
 sub barycenter {
-    my $size  = shift || $SIZE;  # Default to a triad
-    my $scale = shift || $SCALE; # Default to the common scale notes
+    my $size  = shift || SIZE;  # Default to a triad
+    my $scale = shift || SCALE; # Default to the common scale notes
     return ($scale / $size) x $size;
 }
 
