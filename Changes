@@ -1,6 +1,11 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
+    - Add a test.
+    - Imported documentation.
+    - Use the constant pragma for constants!
+
+0.0306 2020-04-01 18:56:32
     - Improve documentation.
     - Add and improve test cases.
 
