@@ -1,6 +1,9 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
+    - Fix cycles SYNOPSIS example context.
+
+0.0307 2020-04-01 19:26:37
     - Add a test!
     - Imported documentation.
     - Use the constant pragma for constants!
