@@ -29,9 +29,6 @@ my $SCALE = 12; # Default number of scale notes
 
  my @chords = ([3,4,5], [0,4,7]); # Given in "pitch-class notation"
 
- my @center = barycenter(scalar @{ $chords[0] });
- # [4,4,4]
-
  my $dist = distance(@chords);
  $dist = orbit_distance(@chords);
  $dist = forte_distance(@chords);
@@ -39,6 +36,9 @@ my $SCALE = 12; # Default number of scale notes
 
  my $cycles = cyclic_permutation($chords[0]);
  # [[3,4,5], [5,3,4], [4,5,3]]
+
+ my @center = barycenter(scalar @{ $chords[0] });
+ # [4,4,4]
 
 =head1 DESCRIPTION
 
