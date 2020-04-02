@@ -20,7 +20,7 @@ our @EXPORT = qw(
     cyclic_permutation
 );
 
-my $SIZE  = 3;  # Default triad size
+my $SIZE  = 3;  # Default chord size
 my $SCALE = 12; # Default number of scale notes
 
 =head1 SYNOPSIS
