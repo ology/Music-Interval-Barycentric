@@ -1,7 +1,7 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
-    - Fix cycles SYNOPSIS example context.
+    - Fix the SYNOPSIS context.
 
 0.0307 2020-04-01 19:26:37
     - Add a test!
