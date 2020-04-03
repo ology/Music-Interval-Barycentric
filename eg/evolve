@@ -9,7 +9,7 @@ use MIDI::Util;
 use lib $ENV{HOME} . '/sandbox/Music-Interval-Barycentric/lib';
 use Music::Interval::Barycentric;
 
-my $max   = shift || 8;
+my $max   = shift || 16;
 my $bpm   = shift || 100;
 my $patch = shift || 0;
 
