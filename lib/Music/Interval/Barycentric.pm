@@ -18,6 +18,7 @@ our @EXPORT = qw(
     orbit_distance
     forte_distance
     cyclic_permutation
+    inversion
 );
 
 use constant SIZE  => 3;  # Default chord size
@@ -86,6 +87,8 @@ sub barycenter {
 
 Common Euclidean space distance metric between chords (vectors).
 
+This function takes two array references representing chords.
+
 =cut
 
 sub distance {
@@ -105,6 +108,8 @@ sub distance {
 Return the distance from C<chord1> to the minimum of the cyclic permutations
 for C<chord2>.
 
+This function takes two array references representing chords.
+
 =cut
 
 sub orbit_distance {
@@ -123,6 +128,8 @@ sub orbit_distance {
 Return the distance from C<chord1> to the minimum of the cyclic permutations and
 reverse cyclic permutations for C<chord2>.
 
+This function takes two array references representing chords.
+
 =cut
 
 sub forte_distance {
@@ -140,6 +147,8 @@ sub forte_distance {
  @cycles = cyclic_permutation(@intervals);
 
 Return the list of cyclic permutations of the given intervals.
+
+This function takes a list of array references representing chords.
 
 =cut
 
@@ -160,6 +169,8 @@ sub cyclic_permutation {
 
 Return a chord distance from the barycenter.
 
+This function takes an array reference representing a chord.
+
 =cut
 
 sub evenness_index {
@@ -167,6 +178,22 @@ sub evenness_index {
     my @b = barycenter( scalar @$chord );
     my $i = distance( $chord, \@b );
     return $i;
+}
+
+=head2 inversion
+
+  my $inverted = inversion($chord);
+
+"The inversion of a chord is formed by displaying the "retrograde"
+representation of the original chord."
+
+This function takes an array reference representing a chord.
+
+=cut
+
+sub inversion {
+    my $chord = shift;
+    return [ reverse @$chord ];
 }
 
 1;
