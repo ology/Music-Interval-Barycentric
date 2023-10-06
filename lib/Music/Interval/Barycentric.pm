@@ -201,6 +201,8 @@ __END__
 
 =head1 SEE ALSO
 
+L<List::Util>
+
 The F<t/01-functions.t> and F<eg/*> programs in this distribution.
 
 L<http://www.amazon.com/Geometry-Musical-Chords-Interval-Representation/dp/145022797X>
