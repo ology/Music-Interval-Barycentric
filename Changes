@@ -4,6 +4,7 @@ Revision history for Music-Interval-Barycentric
     - Update the eg/evolve program.
     - Improve tests.
     - Improve documentation.
+    - Update the dist.ini file.
 
 0.0400 2020-04-03 08:37:52
     - Improve documentation.
