@@ -30,16 +30,18 @@ use constant SCALE => 12; # Default number of scale notes
 
  my @chords = ([3,4,5], [0,4,7]); # Given in "pitch-class notation"
 
- my $dist = distance(@chords);
- $dist = orbit_distance(@chords);
- $dist = forte_distance(@chords);
- my $even = evenness_index($chords[0]);
+ my $dist = distance(@chords); # 2.5495...
+ $dist = orbit_distance(@chords); # 2.5495...
+ $dist = forte_distance(@chords); # 2.5495...
+ my $even = evenness_index($chords[0]); # 1
 
  my @cycles = cyclic_permutation($chords[0]);
  # [3,4,5], [5,3,4], [4,5,3]
 
  my @center = barycenter(scalar @{ $chords[0] });
  # [4,4,4]
+
+ my $inv = inversion(@c); # [ 5, 4, 3 ]
 
 =head1 DESCRIPTION
 
