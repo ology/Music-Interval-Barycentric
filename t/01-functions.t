@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 use Test::More;
-# use Data::Dumper::Compact qw(ddc);
+use Data::Dumper::Compact qw(ddc);
 
 use_ok 'Music::Interval::Barycentric';
 
@@ -21,7 +21,24 @@ my @chords = (
 );
 
 subtest barycenter => sub {
+    is_deeply [barycenter()], [4,4,4], 'barycenter';
+    is_deeply [barycenter(1)], [12], 'barycenter';
+    is_deeply [barycenter(2)], [6,6], 'barycenter';
     is_deeply [barycenter(3)], [4,4,4], 'barycenter';
+    is_deeply [barycenter(4)], [3,3,3,3], 'barycenter';
+    is_deeply [barycenter(5)], [2.4, 2.4, 2.4, 2.4, 2.4], 'barycenter';
+
+    is_deeply [barycenter(1,1)], [1], 'barycenter';
+    is_deeply [barycenter(2,1)], [0.5, 0.5], 'barycenter';
+    is_deeply [barycenter(3,1)], [1/3, 1/3, 1/3], 'barycenter';
+    is_deeply [barycenter(4,1)], [0.25, 0.25, 0.25, 0.25], 'barycenter';
+    is_deeply [barycenter(5,1)], [0.2, 0.2, 0.2, 0.2, 0.2], 'barycenter';
+
+    is_deeply [barycenter(1,2)], [2], 'barycenter';
+    is_deeply [barycenter(2,2)], [1, 1], 'barycenter';
+    is_deeply [barycenter(3,2)], [2/3, 2/3, 2/3], 'barycenter';
+    is_deeply [barycenter(4,2)], [0.5, 0.5, 0.5, 0.5], 'barycenter';
+    is_deeply [barycenter(5,2)], [0.4, 0.4, 0.4, 0.4, 0.4], 'barycenter';
 };
 
 subtest distance => sub {

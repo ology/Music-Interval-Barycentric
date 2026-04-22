@@ -1,6 +1,7 @@
 Revision history for Music-Interval-Barycentric
 
 {{$NEXT}}
+    - Improve tests.
 
 0.0402 2026-04-21 17:00:39
     - Update the eg/evolve program.
