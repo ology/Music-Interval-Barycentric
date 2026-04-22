@@ -41,7 +41,7 @@ use constant SCALE => 12; # Default number of scale notes
  my @center = barycenter(scalar @{ $chords[0] });
  # [4,4,4]
 
- my $inv = inversion(@c); # [ 5, 4, 3 ]
+ my $inv = inversion(@chords); # [ 5, 4, 3 ]
 
 =head1 DESCRIPTION
 
