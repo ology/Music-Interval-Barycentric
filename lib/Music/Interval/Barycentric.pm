@@ -5,7 +5,7 @@ package Music::Interval::Barycentric;
 use strict;
 use warnings;
 
-our $VERSION = '0.0402';
+our $VERSION = '0.0403';
 
 use List::Util qw( min );
 
