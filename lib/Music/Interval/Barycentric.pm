@@ -5,7 +5,7 @@ package Music::Interval::Barycentric;
 use strict;
 use warnings;
 
-our $VERSION = '0.0404';
+our $VERSION = '0.0405';
 
 use List::Util qw( min );
 
@@ -28,20 +28,21 @@ use constant SCALE => 12; # Default number of scale notes
 
  use Music::Interval::Barycentric;
 
- my @chords = ([3,4,5], [0,4,7]); # Given in "pitch-class notation"
+ my $chord1 = [3,4,5];
+ my $chord1 = [0,4,7];
 
- my $dist = distance(@chords); # 2.5495...
- $dist = orbit_distance(@chords); # 2.5495...
- $dist = forte_distance(@chords); # 2.5495...
- my $even = evenness_index($chords[0]); # 1
+ my $dist = distance($chord1, $chord2); # 2.5495...
+ $dist = orbit_distance($chord1, $chord2); # 2.5495...
+ $dist = forte_distance($chord1, $chord2); # 2.5495...
+ my $even = evenness_index($chord1); # 1
 
- my @cycles = cyclic_permutation($chords[0]);
+ my @cycles = cyclic_permutation($chord1);
  # [3,4,5], [5,3,4], [4,5,3]
 
- my @center = barycenter(scalar @{ $chords[0] });
+ my @center = barycenter(scalar @{ $chord1 });
  # [4,4,4]
 
- my $inv = inversion(@chords); # [ 5, 4, 3 ]
+ my $inv = inversion($chord1); # [5,4,3]
 
 =head1 DESCRIPTION
 
