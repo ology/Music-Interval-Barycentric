@@ -29,7 +29,7 @@ use constant SCALE => 12; # Default number of scale notes
  use Music::Interval::Barycentric;
 
  my $chord1 = [3,4,5];
- my $chord1 = [0,4,7];
+ my $chord2 = [0,4,7];
 
  my $dist = distance($chord1, $chord2); # 2.5495...
  $dist = orbit_distance($chord1, $chord2); # 2.5495...
